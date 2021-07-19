@@ -1,5 +1,7 @@
+const mode =
+  process.env.NODE_ENV === "production" ? "production" : "development";
 module.exports = {
-  mode: "development",
+  mode: mode,
   module: {
     rules: [
       {
@@ -12,7 +14,7 @@ module.exports = {
     ],
   },
 
-  devtool: false,
+  devtool: "source-map",
   devServer: {
     contentBase: "./dist",
   },
